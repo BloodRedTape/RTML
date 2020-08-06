@@ -1,0 +1,14 @@
+#include "text.rtml"
+
+##one more usefull comment
+
+this is test file for a raw text macro language
+Yes, i know than there is at least two RTML in industry
+but i do not really care
+
+#set text_var "Just for Fun"
+#set author "Linus Torvalds"
+
+everything was made #[text_var] (c) #[author]
+
+kind of EOF
