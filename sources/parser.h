@@ -11,13 +11,13 @@ struct ParseProps{
     char *variable_directive;
 };
 
-int parse_unit(const struct ParseProps* props,char *filename);
+int parse_unit(const struct ParseProps *props,char *filename);
 
-int parse_file(const struct ParseProps* props,char *filename, FILE* file_out);
+int parse_file(const struct ParseProps *props,char *filename, FILE *file_out);
 
-int parse_line(const struct ParseProps* props,char *line,FILE* file_out);
+int parse_line(const struct ParseProps *props,char *line,FILE *file_out);
 
-
-void print_props(const struct ParseProps* props);
+int parse_expression(const struct ParseProps *props, char* begin, FILE *file_out);
+void print_props(const struct ParseProps *props);
 
 #endif

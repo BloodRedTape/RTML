@@ -20,6 +20,7 @@ int main(int argc, char **argv){
     print_props(&props);
 
     for(int i = 1; i<argc; i++){
+        printf("parse unit:%i filename:%s\n",i,*(argv+1));
         parse_unit(&props,*(argv+i));
     }
 }

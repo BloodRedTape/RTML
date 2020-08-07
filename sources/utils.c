@@ -2,6 +2,7 @@
 #include "stddef.h"
 #include "string.h"
 #include "stdlib.h"
+#include "stdio.h"
 
 int replace_extension(const char *to, char* filename){
     char *extension_start = find_last_char('.',filename);
@@ -21,7 +22,7 @@ int replace_extension(const char *to, char* filename){
 
 char *find_last_char(char ch, char *string){
     char *result = NULL;
-    while(*string!=0){
+    while(*string != 0){
         if(*string == ch)
             result = string;
         string++;
@@ -29,8 +30,26 @@ char *find_last_char(char ch, char *string){
     return result;
 }
 
+char *find_first_char(char ch, char *string){
+    while(*string != 0){
+        if(*string == ch)
+            return string;
+        string++;
+    }
+    return NULL;
+}
+
+int word_size(char *string){
+    char *begin = string;
+    for(;;){
+        if(*(string)==' ' || *(string)=='\n' || *(string)==0)
+            return (int)(string - begin);
+        string++;
+    }
+}
+
 void fllte(char *string,char ch){
-    while(*string!=0){
+    while(*string != 0){
         *string = ch;
         string++;
     }
@@ -41,4 +60,13 @@ char *clone_string(char *string){
     char *clone = (char *)malloc(length*sizeof(char));
     memcpy(clone,string,length);
     return clone;
+}
+
+int line_length(char *line){
+    char * begin = line;
+    for(;;){
+        if(*(line)=='\n' || *(line)==0)
+            return (int)(line-begin);
+        line++;
+    }
 }
