@@ -7,6 +7,7 @@ struct String{
 };
 
 void str_init(struct String *str, char *string);
+void str_finalize(struct String *str);
 void str_print(struct String *str);
 
 struct String str_clone(struct String *str);

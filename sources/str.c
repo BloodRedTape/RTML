@@ -11,6 +11,9 @@ void str_init(struct String *str, char *string){
     memcpy(str->buffer,string,str->length*sizeof(char));
 }
 
+void str_finalize(struct String *str){
+    free(str->buffer);
+}
 
 void str_print(struct String *str){
     printf("%s\n",str->buffer);
