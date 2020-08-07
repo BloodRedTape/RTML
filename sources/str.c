@@ -36,7 +36,7 @@ struct String str_create(char *string){
 }
 
 int str_cmp(struct String *f, struct String *s){
-    if(strcmp(f,s)==0)
+    if(strcmp(f->buffer,s->buffer)==0)
         return 1;
     return 0;
 }
